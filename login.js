@@ -8,4 +8,6 @@ while(num>0){
     num=Math.floor(num/10);
 }
 console.log("sum of digits of number "+n+":"+sum);
+console.log("change in remote ");
+
 
