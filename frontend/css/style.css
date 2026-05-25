@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.navbar {
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+nav a {
+  margin: 0 14px;
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+.nav-btn,
+.primary-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.secondary-btn {
+  background: white;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 90vh;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-card {
+  width: 350px;
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+}
+
+.hero-card h3 {
+  margin-bottom: 20px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.features,
+.workflow,
+.pricing,
+.contact {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.features h2,
+.workflow h2,
+.pricing h2,
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.section-text {
+  color: #64748b;
+  margin-bottom: 40px;
+}
+
+.feature-grid,
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.feature-card,
+.step,
+.pricing-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card h3,
+.step h3 {
+  margin-bottom: 12px;
+  color: #2563eb;
+}
+
+.feature-card p,
+.step p,
+.pricing-card p,
+.contact p {
+  color: #64748b;
+}
+
+.step span {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  line-height: 42px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.workflow .steps {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pricing-card {
+  max-width: 380px;
+  margin: auto;
+}
+
+.price {
+  font-size: 32px;
+  color: #2563eb;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.contact {
+  background: #1e293b;
+  color: white;
+}
+
+.contact p {
+  margin: 15px 0 25px;
+  color: #cbd5e1;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #0f172a;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .feature-grid,
+  .workflow .steps {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero-card {
+    width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+}
