@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+        <link rel="stylesheet" href="style.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card shadow p-5" style="max-width: 500px; width: 100%;">
+            <h1 class="text-center mb-4">Registration Form</h1>
+            <form action="/submit_registration" method="post">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone number:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-7890">
+                </div>
+
+                <div class="mb-3">
+                    <label for="dob" class="form-label">Date of Birth:</label>
+                    <input type="date" class="form-control" id="dob" name="dob">
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <textarea class="form-control" id="address" name="address" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Gender:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Course applying for:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="btech" name="course" value="btech">
+                        <label class="form-check-label" for="btech">Btech</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mtech" name="course" value="mtech" checked>
+                        <label class="form-check-label" for="mtech">Mtech</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="branch" class="form-label">Branch:</label>
+                    <select class="form-select" id="branch" name="branch" required>
+                        <option selected>Applying for</option>
+                        <option value="cse">CSE</option>
+                        <option value="it">IT</option>
+                        <option value="ece">ECE</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="idfile" class="form-label">Identification file:</label>
+                    <input class="form-control" type="file" id="idfile" name="idfile">
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Create password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the terms and conditions
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script></body>
+</html>

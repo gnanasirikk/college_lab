@@ -1,0 +1,55 @@
+
+mkdir web-app
+cd web-app
+
+
+STEP 2: CREATE 5 HTML PAGES
+
+touch index.html about.html contact.html services.html blog.html
+
+git init
+git add .
+git commit -m "Initial commit with 5 pages"
+
+
+STEP 6: CREATE REMOTE REPOSITORY (GITHUB)
+
+# Go to https://github.com
+# Click "New Repository"
+# Give name: web-app
+# Click Create
+
+
+STEP 7: CONNECT LOCAL TO REMOTE
+
+git remote add origin https://github.com/username/web-app.git
+
+
+STEP 8: PUSH TO GITHUB
+
+git branch -M main
+git push -u origin main
+
+
+STEP 9: EXPLORE FETCH
+
+git fetch origin
+
+# This downloads latest changes but does not merge
+
+
+STEP 10: EXPLORE PULL
+
+git pull origin main
+
+# This fetches + merges changes
+
+
+STEP 11: EXPLORE PUSH (AGAIN)
+
+# Make a change in any file
+# Then run:
+
+git add .
+git commit -m "Updated pages"
+git push origin main
