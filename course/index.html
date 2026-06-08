@@ -2,112 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Course Registration Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Online Course Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1 class="textdash text-success justify-content-center text-center mt-4">Course Registration</h1>
-        <p class="textdash text-center bg-light pt-3 pb-3 ps-5 pe-5 text-center mt-3 mb-3">Browse and register for courses offered this semester.</p>
-    
-        <nav class="navbar navbar-expand-xxl navbar-light bg-success">
-            <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="letter.jpg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2"> 
-                CVR Online Engineering Registration</a>
 
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">SkillUp Institute</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Courses</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                More Options
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Home</a></li>
-                                <li><a class="dropdown-item" href="#">Contact</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">About us</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="btn btn-primary ms-2">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero text-white text-center d-flex align-items-center">
+    <div class="container">
+        <h1>SkillUp Training Institute</h1>
+        <p class="lead">Learn today. Lead tomorrow.</p>
+        <p>Explore industry-ready courses and build your future with practical skills.</p>
+        <a href="courses.html" class="btn btn-warning">Explore Courses</a>
+    </div>
+</section>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Featured Courses</h2>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top">
+                <div class="card-body">
+                    <h5>Web Development</h5>
+                    <p>Duration: 3 Months</p>
+                    <p>Fee: ₹15,000</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal">View Details</button>
                 </div>
             </div>
-        </nav>
-
-        <div class="container">
-            <img src="letter.jpg" alt="Course Registration" class="img-fluid mt-4 mb-4" style="width: 1400px; height: 400px;">
-            <h2 class="mt-4 text-center">Available Courses</h2>
-            <p class="text-center"> Explore our wide range of courses across various disciplines. Register now to secure your spot!</p>
         </div>
-        
-        <div class="container">
-            <div class="row">
-             <div class="col">
-      <div class="card1" style="width: 18rem;">
-  <img src="letter.jpg" class="card-img-top" alt="..." width="200" height="200">
-  <div class="card-body">
-    <h5 class="card-title">course0</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="course0.html" class="btn btn-primary">Learn more</a>
-  </div></div></div>   
 
-
-
-  <div class="col">
-      <div class="card1" style="width: 18rem;">
-  <img src="letter.jpg" class="card-img-top" alt="..." width="200" height="200">
-  <div class="card-body">
-    <h5 class="card-title">course1</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="form.html" class="btn btn-primary">Learn more</a>
-  </div></div></div>  
-
-  <div class="col">
-      <div class="card1" style="width: 18rem;">
-  <img src="letter.jpg" class="card-img-top" alt="..." width="200" height="200">
-  <div class="card-body">
-    <h5 class="card-title">course2</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="form.html" class="btn btn-primary">Learn more</a>
-  </div></div></div>  
-
-
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top">
+                <div class="card-body">
+                    <h5>Python Programming</h5>
+                    <p>Duration: 2 Months</p>
+                    <p>Fee: ₹12,000</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal">View Details</button>
+                </div>
             </div>
-            
         </div>
-    
-    
-    </header>
 
-
-    <footer class="footercon m-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-*-*">
-         CVR College of Engineering, 2024. All rights reserved.
-      </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" class="card-img-top">
+                <div class="card-body">
+                    <h5>Data Science</h5>
+                    <p>Duration: 4 Months</p>
+                    <p>Fee: ₹25,000</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal">View Details</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Student Testimonials</h2>
+
+    <div id="testimonialCarousel" class="carousel slide bg-light p-4 rounded">
+        <div class="carousel-inner text-center">
+            <div class="carousel-item active">
+                <p>"The Web Development course helped me build real projects."</p>
+                <h6>- Anjali</h6>
+            </div>
+            <div class="carousel-item">
+                <p>"Python classes were beginner-friendly and practical."</p>
+                <h6>- Rahul</h6>
+            </div>
+            <div class="carousel-item">
+                <p>"I learned Data Science from basics to project level."</p>
+                <h6>- Sneha</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="courseModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Course Details</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                This course includes practical sessions, assignments, and project work.
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center p-4">
+    <p>Address: Hyderabad, Telangana</p>
+    <p>Phone: 9876543210 | Email: info@skillup.com</p>
+    <p>Instagram | Facebook | LinkedIn</p>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

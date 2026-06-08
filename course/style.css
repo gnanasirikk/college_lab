@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    height: 450px;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://via.placeholder.com/1200x500");
+    background-size: cover;
+    background-position: center;
+}
+
+.card {
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.04);
+}
+
+.map-placeholder {
+    height: 250px;
+    background-color: #e9ecef;
+    border: 2px dashed #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
