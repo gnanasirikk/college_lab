@@ -115,29 +115,131 @@
 // });
 
 // server.listen(3000);
-const http = require("http");
 
 
-const fs = require("fs");
+// const http = require("http");
 
-const server = http.createServer((req, res) => {
 
-    const data = fs.readFileSync("index.html","utf-8")
+// const fs = require("fs");
 
-    res.writeHead(200, {
-        "Content-Type": "text/html"
-    });
+// const server = http.createServer((req, res) => {
 
-    res.write(data);
+//     const data = fs.readFileSync("index.html","utf-8")
 
-    res.end();
+//     res.writeHead(200, {
+//         "Content-Type": "text/html"
+//     });
+
+//     res.write(data);
+
+//     res.end();
+
+// });
+
+// server.listen(3000, () => {
+//     console.log("Server running...");
+// });
+
+// const http = require("http");
+
+// const server = http.createServer((req, res) => {
+
+//     if (req.url === "/") {
+//         res.writeHead(200, { "Content-Type": "text/html" });
+//         res.end("<h1>Home Page</h1>");
+//     } 
+//     else if (req.url === "/about") {
+//         res.writeHead(200, { "Content-Type": "text/html" });
+//         res.end("<h1>About Page</h1>");
+//     } 
+//     else if (req.url === "/contact") {
+//         res.writeHead(200, { "Content-Type": "text/html" });
+//         res.end("<h1>Contact Page</h1>");
+//     } 
+//     else {
+//         res.writeHead(404, { "Content-Type": "text/html" });
+//         res.end("<h1>404 Page Not Found</h1>");
+//     }
+
+// });
+
+// server.listen(3000, () => {
+//     console.log("Server running at http://localhost:3000");
+// });
+
+
+
+// const express = require("express");
+
+// const app = express();
+
+// app.get("/", (req, res) => {
+//     res.send("<h1>Home Page</h1><p>Welcome to Express Server</p>");
+// });
+
+// app.get("/about", (req, res) => {
+//     res.send("<h1>About Page</h1><p>This is about page</p>");
+// });
+
+// app.get("/contact", (req, res) => {
+//     res.send("<h1>Contact Page</h1><p>Email: test@example.com</p>");
+// });
+
+// app.use((req, res) => {
+//     res.status(404).send("<h1>404 Page Not Found</h1>");
+// });
+
+// app.listen(3000, () => {
+//     console.log("Express server running at http://localhost:3000");
+// });
+
+
+// const express = require("express");
+
+// const app = express();
+
+// app.get("/", (req, res) => {
+//     res.send("Welcome to Express");
+// });
+
+// app.listen(3000, () => {
+//     console.log("Server running on http://localhost:3000");
+// });
+
+
+// // const http = require("http");
+// const express = require("express");
+
+// const app = express();
+
+// app.get("/",(req,res)=>{
+//     res.send("Home pangfee");
+
+// app.("/",(req,res)=>{
+
+// })
+
+
+// })
+
+
+const express = require("express");
+
+const app = express();
+
+app.get("/student", (req, res) => {
+
+    const student = {
+        id: 101,
+        name: "Gnana Siri",
+        branch: "CSE"
+    };
+
+    res.json(student);
 
 });
 
-server.listen(3000, () => {
-    console.log("Server running...");
-});
-
+app.listen(3000);
 
 
 
