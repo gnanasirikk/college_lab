@@ -9,6 +9,7 @@ let istudents = [{ name: "Gnana", age: 23, grade: 32 },
 function App() {
   let [students,setStudents] = useState(istudents)
   let [editIndex,setEditIndex] = useState(null)
+  let [search,setSearch] = useState("")
   let [formData,setFormData] = useState({name:"",age:"",grade:""})
   const handleDelete=(i)=>{
     const updatedStudents = students.filter((s,index)=>index!==i)
@@ -45,6 +46,9 @@ function App() {
   return (
     <div className="App">
       <div className="form">
+
+            <input  className="form-control" name="search" value="" placeholder='Type to search'></input>
+
 <h2>{editIndex==null? "Add students" : "Update students"}</h2>
         <input
         className="form-control m-2"
