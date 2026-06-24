@@ -1,0 +1,83 @@
+//1. NODE MODULES DEMO 
+// math.js
+function add(a, b) {
+  return a + b;
+}
+
+function sub(a, b) {
+  return a - b;
+}
+
+module.exports = { add, sub };
+
+
+// app.js
+const math = require("./math");
+
+console.log("Addition:", math.add(5, 3));
+console.log("Subtraction:", math.sub(5, 3));
+
+
+// Run: node app.js
+
+
+
+// 2 & 3. HTTP SERVER WITH ROUTES + JSON
+
+// server.js
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+
+  if (req.url === "/") {
+    res.write("Welcome to the homepage");
+    res.end();
+  } 
+  else if (req.url === "/about") {
+    res.write("This is the about page");
+    res.end();
+  } 
+  else if (req.url === "/api/data") {
+
+    const data = {
+      name: "Yash",
+      age: 21,
+      city: "Hyderabad"
+    };
+
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(JSON.stringify(data));
+  } 
+  else {
+    res.write("Page not found");
+    res.end();
+  }
+
+});
+
+server.listen(3000, () => {
+  console.log("Server running at http://localhost:3000");
+});
+
+// Run:
+// node server.js
+// Test in browser:
+// http://localhost:3000/
+// http://localhost:3000/about
+// http://localhost:3000/api/data
+
+
+
+//4. OS MODULE PROGRAM 
+
+// osinfo.js
+const os = require("os");
+
+console.log("Hostname:", os.hostname());
+console.log("Platform:", os.platform());
+console.log("Uptime (seconds):", os.uptime());
+
+console.log("Total Memory (MB):", (os.totalmem() / 1024 / 1024).toFixed(2));
+console.log("Free Memory (MB):", (os.freemem() / 1024 / 1024).toFixed(2));
+
+// Run:node osinfo.js

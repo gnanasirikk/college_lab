@@ -1,0 +1,78 @@
+STEP 1: CLONE REMOTE REPOSITORY
+
+git clone https://github.com/username/repo-name.git
+cd repo-name
+
+
+STEP 2: CREATE NEW BRANCH
+
+git branch feature1
+git checkout feature1
+
+# OR (shortcut)
+git checkout -b feature1
+
+
+STEP 3: MODIFY FILES
+
+# Open project in editor and make changes
+# Example:
+# edit index.html / app.js
+
+
+STEP 4: ADD AND COMMIT CHANGES
+
+git add .
+git commit -m "Updated implementation in feature1 branch"
+
+
+STEP 5: PUSH BRANCH TO REMOTE
+
+git push origin feature1
+
+
+STEP 6: CREATE ANOTHER BRANCH (FOR TEAM WORK)
+
+git checkout main
+git checkout -b feature2
+
+# Make changes in feature2
+git add .
+git commit -m "Feature2 changes"
+git push origin feature2
+
+
+STEP 7: MERGE BRANCHES INTO MAIN
+
+git checkout main
+
+git merge feature1
+git merge feature2
+
+
+STEP 8: PUSH FINAL CODE
+
+git push origin main
+
+
+STEP 9: PUBLISH USING GITHUB PAGES
+
+# Go to GitHub repository
+# Click → Settings
+# Click → Pages
+
+# Under "Source":
+Select → Deploy from branch
+Select branch → main
+Select folder → /root
+
+Click Save
+
+# Your app will be live at:
+https://username.github.io/repo-name/
+
+
+STEP 10: VERIFY
+
+Open browser:
+https://username.github.io/repo-name/

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+    <h1 class="textdash">Welcome to your Dashboard</h1>
+    <p class="textdash text-center bg-light pt-3 pb-3 ps-5 pe-5">Here you can view your courses, grades, and manage your profile.</p> 
+
+
+
+    <div class="card mt-5 pt-4 ms-3 me-3 mb-5">        
+        <div class="row">
+        <div class="col">
+        <div class="card-header">Total Students </div>
+        <div class="card-body">
+        <h5 class="card-title">1290</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Complete information</a>
+        </div></div>
+
+        <div class="col">
+        <div class="card-header">Present Students  </div>
+        <div class="card-body">
+        <h5 class="card-title">1090</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Complete information</a>
+        </div></div>
+
+        <div class="col">
+        <div class="card-header">Absent Students </div>
+        <div class="card-body">
+        <h5 class="card-title">200</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Complete information</a>
+        </div></div>
+
+        <div class="col">
+        <div class="card-header">Placements</div>
+        <div class="card-body">
+        <h5 class="card-title">290</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Complete information</a>
+        </div></div></div>
+    </div> 
+    
+    <div class="stdtable ms-3 me-3">
+        <div class="mb-3">
+        <h3 class="bg-light pt-2 pb-2 ps-2 pe-2" >Search:</h3>
+            <input type="search" class="form-control" id="searchInput" placeholder="Search by name, email, or roll number...">
+        </div>
+        <h3 class="bg-light pt-2 pb-2 ps-2 pe-2" >Student Details</h3>
+        <table class="table table-hover ">
+           
+            <thead>
+                <tr class="table-active">
+                    <th scope="col">Roll number</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">Attendance</th>
+
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+                <tr class="table-active">
+                    <th scope="row">1</th>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>Computer Science</td>
+                    <td>95%</td>
+                </tr>
+                <tr class="table-active">
+                    <th scope="row">2</th>
+                    <td>Jane Smith<td>
+                    <td>jane.smith@example.com</td>
+                    <td>Computer Science</td>
+                    <td>92%</td>
+                </tr>
+                <tr class="table-active">
+                    <th scope="row">3</th>
+                    <td>Mike Johnson</td>
+                    <td>mike.johnson@example.com</td>
+                    <td>Electronics</td>
+                    <td><span class="badge bg-danger">38%</span></td>
+                </tr>
+            </tbody>
+    
+</table>
+    </div>
+
+    <script>
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const searchValue = this.value.toLowerCase();
+            const tableRows = document.querySelectorAll('#studentTableBody tr');
+            
+            tableRows.forEach(row => {
+                const rowText = row.textContent.toLowerCase();
+                row.style.display = rowText.includes(searchValue) ? '' : 'none';
+            });
+        });
+    </script>
+
+</body>
+</html>

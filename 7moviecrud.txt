@@ -1,0 +1,139 @@
+{% comment %} STEP 1: CREATE PROJECT
+
+mkdir movie-api
+cd movie-api
+npm init -y
+npm install express mongoose body-parser
+
+
+STEP 2: CREATE FILE
+
+touch server.js {% endcomment %}
+
+
+{% comment %} STEP 3: ADD CODE IN server.js {% endcomment %}
+
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+
+const app = express();
+app.use(bodyParser.json());
+
+// Connect MongoDB
+mongoose.connect("mongodb://localhost:27017/moviesDB")
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log(err));
+
+// Schema
+const movieSchema = new mongoose.Schema({
+  title: String,
+  director: String,
+  releaseYear: Number,
+  genre: String
+});
+
+const Movie = mongoose.model("Movie", movieSchema);
+
+// POST → Add movie
+app.post("/movies", async (req, res) => {
+  const movie = new Movie(req.body);
+  await movie.save();
+  res.json(movie);
+});
+
+// GET → All movies
+app.get("/movies", async (req, res) => {
+  const movies = await Movie.find();
+  res.json(movies);
+});
+
+// GET → Movie by ID
+app.get("/movies/:id", async (req, res) => {
+  const movie = await Movie.findById(req.params.id);
+  res.json(movie);
+});
+
+// PUT → Update movie
+app.put("/movies/:id", async (req, res) => {
+  const movie = await Movie.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  );
+  res.json(movie);
+});
+
+// DELETE → Remove movie
+app.delete("/movies/:id", async (req, res) => {
+  await Movie.findByIdAndDelete(req.params.id);
+  res.json({ message: "Movie deleted" });
+});
+
+// Start server
+app.listen(5000, () => {
+  console.log("Server running on http://localhost:5000");
+});
+
+
+{% comment %} STEP 4: RUN SERVER
+
+node server.js
+
+
+STEP 5: TEST USING POSTMAN
+
+
+1. ADD MOVIE
+
+Method: POST  
+URL: http://localhost:5000/movies  
+
+Body → JSON:
+
+{
+  "title": "Inception",
+  "director": "Christopher Nolan",
+  "releaseYear": 2010,
+  "genre": "Sci-Fi"
+}
+
+Click Send
+
+
+2. GET ALL MOVIES
+
+Method: GET  
+URL: http://localhost:5000/movies  
+
+Click Send
+
+
+3. GET MOVIE BY ID
+
+Method: GET  
+URL: http://localhost:5000/movies/<PASTE_ID>  
+
+Click Send
+
+
+4. UPDATE MOVIE
+
+Method: PUT  
+URL: http://localhost:5000/movies/<PASTE_ID>  
+
+Body → JSON:
+
+{
+  "title": "Inception Updated"
+}
+
+Click Send
+
+
+5. DELETE MOVIE
+
+Method: DELETE  
+URL: http://localhost:5000/movies/<PASTE_ID>  
+
+Click Send {% endcomment %}

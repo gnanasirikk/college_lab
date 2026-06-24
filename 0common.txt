@@ -1,0 +1,159 @@
+{% comment %} mkdir ecommerce-api
+cd ecommerce-api
+npm init -y
+
+npm install express jsonwebtoken cors body-parser 
+node server.js
+{% endcomment %}
+
+
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
+const app = express();
+app.use(bodyParser.json());
+app.use(cors());
+
+const SECRET_KEY = "mysecretkey";
+
+// Dummy user (for login)
+const user = {
+  id: 1,
+  username: "yash",
+  password: "1234"
+};
+
+// Dummy products
+const products = [
+  { id: 1, name: "Laptop", price: 50000 },
+  { id: 2, name: "Phone", price: 20000 }
+];
+
+
+// 🔐 LOGIN API (Generate JWT)
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+
+  if (username === user.username && password === user.password) {
+    const token = jwt.sign({ id: user.id }, SECRET_KEY, {
+      expiresIn: "1h"
+    });
+
+    res.json({ message: "Login successful", token });
+  } else {
+    res.status(401).json({ message: "Invalid credentials" });
+  }
+});
+
+
+// 🔐 Middleware to verify JWT
+const authenticateToken = (req, res, next) => {
+  const token = req.headers["authorization"];
+
+  if (!token) return res.sendStatus(403);
+
+  jwt.verify(token, SECRET_KEY, (err, decoded) => {
+    if (err) return res.sendStatus(401);
+    req.user = decoded;
+    next();
+  });
+};
+
+
+// 🔐 Protected Route (Only logged-in users)
+app.get("/products", authenticateToken, (req, res) => {
+  res.json(products);
+});
+
+
+// Start server
+app.listen(5000, () => {
+  console.log("Server running on http://localhost:5000");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STEP 1: OPEN POSTMAN
+- Click on "New Request"
+
+--------------------------------------------------
+
+STEP 2: LOGIN API (GET JWT TOKEN)
+
+Method: POST  
+URL: http://localhost:5000/login  
+
+Go to Body tab:
+- Select "raw"
+- Select "JSON"
+
+Paste:
+
+{
+  "username": "yash",
+  "password": "1234"
+}
+
+Click "Send"
+
+Response:
+{
+  "message": "Login successful",
+  "token": "YOUR_TOKEN_HERE"
+}
+
+Copy the token
+
+--------------------------------------------------
+
+STEP 3: ACCESS PROTECTED API
+
+Method: GET  
+URL: http://localhost:5000/products  
+
+Go to Headers tab:
+
+Key: Authorization  
+Value: Bearer YOUR_TOKEN_HERE  
+
+Example:
+Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
+
+Click "Send"
+
+Response:
+[
+  { "id": 1, "name": "Laptop", "price": 50000 },
+  { "id": 2, "name": "Phone", "price": 20000 }
+]
+
+--------------------------------------------------
