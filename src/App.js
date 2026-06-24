@@ -47,7 +47,7 @@ function App() {
     <div className="App">
       <div className="form">
 
-            <input  className="form-control" name="search" value="" placeholder='Type to search'></input>
+            <input  className="form-control" name="search" value="" placeholder='Type to search' onChange={(e)=>setSearch(e.target.value)}></input>
 
 <h2>{editIndex==null? "Add students" : "Update students"}</h2>
         <input
