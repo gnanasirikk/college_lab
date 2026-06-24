@@ -11,6 +11,7 @@ function App() {
   let [editIndex,setEditIndex] = useState(null)
   let [search,setSearch] = useState("")
   let [formData,setFormData] = useState({name:"",age:"",grade:""})
+  let [ascending,setAscending] = useState(true)
   const handleDelete=(i)=>{
     const updatedStudents = students.filter((s,index)=>index!==i)
     // alert(i)
@@ -40,14 +41,16 @@ function App() {
 
   }
 
+  const sortedstudents=[...filteredStudents].sort((a,b)=>a.name.localeCompare(b.name))
 
 
+const filteredStudents=students.filter((s)=>s.name.toLowerCase().includes(search.toLowerCase()))
 
   return (
     <div className="App">
       <div className="form">
 
-            <input  className="form-control" name="search" value="" placeholder='Type to search' onChange={(e)=>setSearch(e.target.value)}></input>
+            <input  className="form-control" name="search" placeholder='Type to search' onChange={(e)=>setSearch(e.target.value)}></input>
 
 <h2>{editIndex==null? "Add students" : "Update students"}</h2>
         <input
@@ -75,7 +78,7 @@ function App() {
 <table className="table table-bordered" border="1">
         <thead>
           <tr>
-            <th>Name</th>
+            <th onClick={setAscending(!ascending)}>Name</th>
             <th>Age</th>
             <th>Grade</th>
             <th>Actions</th>
@@ -83,7 +86,7 @@ function App() {
         </thead>
 
         <tbody>
-          {students.map((s, index) => (
+          {sortedStudents.map((s, index) => (
             <tr key={index}>
               <td>{s.name}</td>
               <td>{s.age}</td>
